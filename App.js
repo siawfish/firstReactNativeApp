@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
 
 export default function App() {
   return (
@@ -8,31 +8,55 @@ export default function App() {
       <Image source={require('./assets/avatar.jpg')} style={styles.image}/>
 
       <View style={styles.infoContainer}>
+        <Text style={styles.labelDispabled}>
+          School
+        </Text>
+        <Text style={styles.infoDisabled}>
+          Codetrain
+        </Text>
+      </View>
+
+      <View style={styles.infoContainer}>
+        <Text style={styles.labelDispabled}>
+          Email
+        </Text>
+        <Text style={styles.infoDisabled}>
+          mcamanor@gmail.com
+        </Text>
+      </View>
+
+      <View style={styles.infoContainer}>
         <Text style={styles.label}>
           Name
         </Text>
-        <Text style={styles.info}>
-          Tony Stark
-        </Text>
+        <TextInput style={styles.info}>
+          Kofi Siaw
+        </TextInput>
       </View>
 
       <View style={styles.infoContainer}>
         <Text style={styles.label}>
-          Email
+          Nickname
         </Text>
-        <Text style={styles.info}>
-          starkindustries@avengers.heros
-        </Text>
+        <TextInput style={styles.info}>
+          Siawfish
+        </TextInput>
       </View>
 
       <View style={styles.infoContainer}>
         <Text style={styles.label}>
-          Gender
+          Emergency Contant
         </Text>
-        <Text style={styles.info}>
-          Iron Man
-        </Text>
+        <TextInput style={styles.info} editable={false}>
+          +233 577 075 706
+        </TextInput>
       </View>
+
+      <TouchableOpacity
+        style={styles.button}
+      >
+        <Text>UPDATE PROFILE</Text>
+      </TouchableOpacity>
 
     </View>
   );
@@ -41,37 +65,65 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center'
+    backgroundColor: '#000',
+    
   },
 
   image: {
-    width: 150,
-    height: 150,
-    borderRadius:75,
-    marginTop:150,
-    marginBottom:30
+    width: 120,
+    height: 120,
+    borderColor: '#ffcc33',
+    borderWidth: 4,
+    borderRadius:60,
+    marginTop:100,
+    marginBottom:30,
+    alignSelf: 'center'
   },
 
   infoContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
+    marginHorizontal:40,
+  },
+
+  labelDispabled: {
+    paddingVertical:5,
+    marginTop:5,
+    color: '#333',
+    fontSize: 16
+  },
+
+  infoDisabled: {
+    paddingVertical:5,
+    borderBottomColor: 'gray',
     alignSelf: 'flex-start',
-    marginLeft:30
+    borderBottomWidth: 1,
+    width:'100%',
+    color: 'grey'
   },
 
   label: {
-    paddingVertical:10,
+    paddingVertical:5,
     marginTop:20,
-    flex: 2
+    color: '#ffcc33'
   },
 
   info: {
-    paddingHorizontal:5,
     paddingVertical:10,
-    margin:20,
-    flex: 7.5,
-    borderWidth: 1,
-    borderColor: '#777',
-    borderRadius: 15
+    borderBottomColor: 'gray',
+    alignSelf: 'flex-start',
+    borderBottomWidth: 1,
+    width:'100%',
+    color: 'grey'
+  },
+
+  button: {
+    marginTop: 40,
+    alignItems: "center",
+    backgroundColor: "#ffcc33",
+    color: '#000',
+    padding: 15,
+    borderRadius: 25,
+    marginHorizontal: 40,
   }
+  
 });
