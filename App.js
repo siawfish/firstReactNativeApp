@@ -1,11 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native';
+import Icon from "react-native-vector-icons/Ionicons"
 
 export default function App() {
   return (
     <View style={styles.container}>
 
-      <Image source={require('./assets/avatar.jpg')} style={styles.image}/>
+        <Image source={require('./assets/avatar.jpg')} style={styles.image}/>
+        <View style={styles.iconContainer}>
+          <Icon
+            name="ios-camera"
+            color="#000"
+            size={35}
+          />
+        </View>
 
       <View style={styles.infoContainer}>
         <Text style={styles.labelDispabled}>
@@ -47,6 +55,13 @@ export default function App() {
         <Text style={styles.label}>
           Emergency Contant
         </Text>
+        <View style={styles.contactIcon}>
+          <Icon
+              name="ios-contact"
+              color="#ffcc33"
+              size={20}
+            />
+        </View>
         <TextInput style={styles.info} editable={false}>
           +233 577 075 706
         </TextInput>
@@ -67,6 +82,25 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#000',
     
+  },
+
+  iconContainer: {
+    position: 'absolute',
+    top: 170,
+    left: 215,
+    backgroundColor:'#ffcc33',
+    paddingHorizontal:5,
+    paddingVertical:5,
+    height:40,
+    borderRadius:20,
+    paddingVertical: 3,
+    paddingHorizontal:7
+  },
+
+  contactIcon: {
+    position:'absolute',
+    left:270,
+    top:50
   },
 
   image: {
